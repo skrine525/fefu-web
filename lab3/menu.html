@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню</title>
+</head>
+
+<body>
+    <h1 align="center">Claude Monet</h1>
+    <hr>
+    <p align="center">
+        <a href="index.html">Главная</a>
+        <a href="menu.html">Меню</a>
+        <a href="barinov.html">Шеф-повар</a>
+    </p>
+    <hr>
+    <p>
+        Добро пожаловать в виртуальное путешествие по вкусу в ресторане "Клод Моне"! Наши кулинарные произведения — это
+        не просто блюда, а настоящие шедевры, вдохновленные великим французским художником. Откройте для себя уникальное
+        сочетание традиций и творчества, представленное нашим шеф-поваром Виктором Петровичем Бариновым. Исследуйте наше
+        меню, где каждое блюдо — это не только праздник для ваших вкусовых рецепторов, но и настоящее погружение в мир
+        изысканного искусства. Приготовьтесь к незабываемому кулинарному путешествию вместе с "Клод Моне"!
+    </p>
+    <details>
+        <summary>
+            Фильтр
+        </summary>
+        <form>
+            <label>Тип блюда
+                <input type="radio">Основное
+                <input type="radio">Суп
+                <input type="radio">Салат
+                <input type="radio">Пирог
+            </label>
+            <br>
+            <label>Максимальная калорийность<input type="range" min="200" max="500"></label>
+            <br>
+            <label>Масса от <input type="text"> до <input type="text"></label>
+            <br>
+            <label>Цена от <input type="text"> до <input type="text"></label>
+            <br>
+            <button type="button">Фильтр</button>
+        </form>
+    </details>
+    <details>
+        <summary>
+            График
+        </summary>
+        <table>
+            <tr>
+                <td>
+                    <h4>Значение по Ox</h4>
+                    <p><input type="radio">Тип блюда</p>
+                </td>
+                <td>
+                    <h4>Значение по Oy</h4>
+                    <p><input type="checkbox">Количество блюд</p>
+                    <p><input type="checkbox">Максимальная цена</p>
+                    <p><input type="checkbox">Максимальная калорийность</p>
+                </td>
+            </tr>
+        </table>
+        <button type="button">График</button>
+    </details>
+    <details>
+        <summary>
+            Сортировка
+        </summary>
+        <p>Первый уровень сортировки</p>
+        <form id="sorting-form">
+            <label for="sort-by">Сортировать по:</label>
+            <select id="sort-by">
+                <option value="energy">Калорийность</option>
+                <option value="mass"> Масса (г)</option>
+                <option value="price">Цена (руб.)</option>
+                <option value="type">Тип блюда</option>
+            </select>
+
+            <label for="sort-order">Порядок сортировки:</label>
+            <select>
+                <option value="asc">По возрастанию</option>
+                <option value="desc">По убыванию</option>
+            </select>
+        </form>
+        <p>Второй уровень сортировки</p>
+        <form>
+            <label for="sort-by">Сортировать по:</label>
+            <select>
+                <option value="energy">Калорийность</option>
+                <option value="mass"> Масса (г)</option>
+                <option value="price">Цена (руб.)</option>
+                <option value="type">Тип блюда</option>
+            </select>
+
+            <label for="sort-order">Порядок сортировки:</label>
+            <select>
+                <option value="asc">По возрастанию</option>
+                <option value="desc">По убыванию</option>
+            </select>
+        </form>
+        <p>Третий уровень сортировки</p>
+        <form>
+            <label for="sort-by">Сортировать по:</label>
+            <select>
+                <option value="energy">Калорийность</option>
+                <option value="mass"> Масса (г)</option>
+                <option value="price">Цена (руб.)</option>
+                <option value="type">Тип блюда</option>
+            </select>
+
+            <label for="sort-order">Порядок сортировки:</label>
+            <select>
+                <option value="asc">По возрастанию</option>
+                <option value="desc">По убыванию</option>
+            </select>
+            <br><br>
+            <button type="button">Сортировать</button>
+        </form>
+    </details>
+    <table border="1">
+        <tr>
+            <th>Блюдо</th>
+            <th>Калорийность</th>
+            <th>Масса (г)</th>
+            <th>Цена (руб.)</th>
+            <th>Тип блюда</th>
+        </tr>
+        <tr>
+            <td>Консоме с трюфельными крошками</td>
+            <td>150</td>
+            <td>250</td>
+            <td>990</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Французский луковый суп "Гратен"</td>
+            <td>200</td>
+            <td>300</td>
+            <td>1275</td>
+            <td>Суп</td>
+        </tr>
+        <tr>
+            <td>Классический никозиенский салат</td>
+            <td>180</td>
+            <td>200</td>
+            <td>1085</td>
+            <td>Салат</td>
+        </tr>
+        <tr>
+            <td>Креветки в чесночном соусе</td>
+            <td>250</td>
+            <td>220</td>
+            <td>1585</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Печеный картофель "Бульба дюшес"</td>
+            <td>220</td>
+            <td>180</td>
+            <td>1485</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Тартар из лосося с каперсами</td>
+            <td>280</td>
+            <td>200</td>
+            <td>1835</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Гренки с картошкой и шампиньонами</td>
+            <td>230</td>
+            <td>180</td>
+            <td>1350</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Буффало-моцарелла с помидорами и базиликом</td>
+            <td>280</td>
+            <td>250</td>
+            <td>1725</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Жюльен из индейки с грибами</td>
+            <td>220</td>
+            <td>230</td>
+            <td>1435</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Конфитюр из фуа-гра с гренками</td>
+            <td>320</td>
+            <td>200</td>
+            <td>1980</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Печеные креветки в чили-соусе</td>
+            <td>260</td>
+            <td>240</td>
+            <td>1650</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Тарт с лимонным курдом</td>
+            <td>180</td>
+            <td>180</td>
+            <td>1270</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Красный окунь в белом вине</td>
+            <td>280</td>
+            <td>220</td>
+            <td>1795</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Фондю с ароматными травами</td>
+            <td>320</td>
+            <td>300</td>
+            <td>2080</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Сельдь в масле с луком</td>
+            <td>180</td>
+            <td>150</td>
+            <td>995</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Рататуй с томатным соусом</td>
+            <td>200</td>
+            <td>200</td>
+            <td>1290</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Гренки с тунцом и авокадо</td>
+            <td>250</td>
+            <td>230</td>
+            <td>1650</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Шарлотка с ягодами</td>
+            <td>220</td>
+            <td>180</td>
+            <td>1345</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Фаршированные грибы с сыром</td>
+            <td>180</td>
+            <td>160</td>
+            <td>1160</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Гречка по-французски</td>
+            <td>220</td>
+            <td>200</td>
+            <td>1385</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Лосось с грейпфрутовым соусом</td>
+            <td>280</td>
+            <td>250</td>
+            <td>1790</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Суп "Минестроне" с белыми бобами</td>
+            <td>220</td>
+            <td>300</td>
+            <td>1450</td>
+            <td>Суп</td>
+        </tr>
+        <tr>
+            <td>Картофельный пюре с трюфельным маслом</td>
+            <td>200</td>
+            <td>200</td>
+            <td>1325</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Филе куриного молодого гуся</td>
+            <td>300</td>
+            <td>280</td>
+            <td>1985</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Карпаччо из телятины с рукколой</td>
+            <td>240</td>
+            <td>220</td>
+            <td>1675</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Омлет с травами и пармезаном</td>
+            <td>180</td>
+            <td>200</td>
+            <td>1150</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Паста "Карбонара" с беконом</td>
+            <td>320</td>
+            <td>250</td>
+            <td>1950</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Сливочный рис с малиновым кули</td>
+            <td>220</td>
+            <td>180</td>
+            <td>1395</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Террин из гусиных печенок</td>
+            <td>280</td>
+            <td>300</td>
+            <td>2090</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Суп "Бульон" с клецками</td>
+            <td>180</td>
+            <td>200</td>
+            <td>1155</td>
+            <td>Суп</td>
+        </tr>
+        <tr>
+            <td>Говядина "Сюрф и турф" с соусом борделе</td>
+            <td>350</td>
+            <td>280</td>
+            <td>2150</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Паста "Путтанеска" с морепродуктами</td>
+            <td>300</td>
+            <td>250</td>
+            <td>1890</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Красная рыба с карри и лимонной травой</td>
+            <td>280</td>
+            <td>220</td>
+            <td>1675</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Куриный пай с лесными грибами</td>
+            <td>320</td>
+            <td>300</td>
+            <td>1985</td>
+            <td>Пирог</td>
+        </tr>
+        <tr>
+            <td>Острицы "Гильардо" с лимоном</td>
+            <td>150</td>
+            <td>200</td>
+            <td>980</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Спагетти с тунцовым соусом</td>
+            <td>260</td>
+            <td>230</td>
+            <td>1595</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Салат "Нисуаз" с тунцом</td>
+            <td>320</td>
+            <td>250</td>
+            <td>1980</td>
+            <td>Салат</td>
+        </tr>
+        <tr>
+            <td>Фриттата с картошкой и луком</td>
+            <td>220</td>
+            <td>180</td>
+            <td>1345</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Семга с авокадо и соевым соусом</td>
+            <td>250</td>
+            <td>220</td>
+            <td>1590</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Горчичные креветки с медовым соусом</td>
+            <td>280</td>
+            <td>240</td>
+            <td>1795</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Ризотто с трюфелями</td>
+            <td>300</td>
+            <td>220</td>
+            <td>1485</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Конфитюр из лимонов с мятой</td>
+            <td>120</td>
+            <td>150</td>
+            <td>715</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Говядина "Бургуньон" с картошкой</td>
+            <td>250</td>
+            <td>280</td>
+            <td>1685</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Сливочный суп с лососем</td>
+            <td>220</td>
+            <td>200</td>
+            <td>1375</td>
+            <td>Суп</td>
+        </tr>
+        <tr>
+            <td>Салат с ростбифом и горчичным соусом</td>
+            <td>280</td>
+            <td>300</td>
+            <td>2075</td>
+            <td>Салат</td>
+        </tr>
+        <tr>
+            <td>Фруктовый салат с мятным сиропом</td>
+            <td>150</td>
+            <td>180</td>
+            <td>1035</td>
+            <td>Салат</td>
+        </tr>
+        <tr>
+            <td>Креп "Сюзетт" с апельсиновым соусом</td>
+            <td>200</td>
+            <td>250</td>
+            <td>1550</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Лосось с грейпфрутовым соусом</td>
+            <td>280</td>
+            <td>250</td>
+            <td>1790</td>
+            <td>Основное</td>
+        </tr>
+        <tr>
+            <td>Суп "Минестроне" с белыми бобами</td>
+            <td>220</td>
+            <td>300</td>
+            <td>1450</td>
+            <td>Суп</td>
+        </tr>
+        <tr>
+            <td>Картофельный пюре с трюфельным маслом</td>
+            <td>200</td>
+            <td>200</td>
+            <td>1325</td>
+            <td>Основное</td>
+        </tr>
+    </table>
+</body>
+
+</html>

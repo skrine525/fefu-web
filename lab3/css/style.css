@@ -1,0 +1,116 @@
+.content {
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.menu-box {
+    margin-top: 10px;
+    margin-bottom: 2px;
+    overflow: hidden;
+}
+
+.menu-title-box {
+    width: 33%;
+    line-height: 120px;
+    float: left;
+    background-color: lightgray;
+}
+
+.menu-content-box {
+    float: right;
+    width: 67%; /* Устанавливаем ширину в 67%, чтобы .menu-content-empty-box и .menu-content-button-box занимали 50% доступной ширины в сумме */
+}
+
+.menu-content-empty-box {
+    width: 100%; /* Устанавливаем ширину в 100% от родительского контейнера */
+    height: 82px; /* Устанавливаем высоту в 50% от родительского контейнера */
+}
+
+.menu-content-button-box {
+    width: 100%; /* Устанавливаем ширину в 100% от родительского контейнера */
+    line-height: 81px;
+    /* Добавьте другие стили по вашему усмотрению */
+    background-color: lightgray;
+}
+
+.menu-button {
+    vertical-align: middle;
+    text-align: right;
+}
+
+.menu-button-item {
+    padding: 5px 10px;
+    background-color: grey;
+    margin: 0 5px;
+    color: white;
+}
+
+.menu-button-item-selected {
+    padding: 5px 10px;
+    background-color: black;
+    margin: 0 5px;
+    color: white;
+}
+
+.title {
+    text-align: center;
+}
+
+.gallery-box {
+    overflow: hidden;
+}
+
+.gallery-box-left {
+    width: 50%;
+    float: left;
+}
+
+.gallery-box-right {
+    width: 50%;
+    float: left;
+}
+
+.gallery-box-right-item {
+    height: 50%;
+    margin-left: 2px;
+}
+
+.gallery-image {
+    width: 100%;
+}
+
+.gallery-image-small-left {
+    width: 100%;
+    height: 50%;
+    float: left;
+}
+
+.gallery-image-small-right {
+    width: 100%;
+    height: 50%;
+    float: left;
+}
+
+.gallery-image-small-right-bottom {
+    width: 100%;
+    height: 50%;
+    float: left;
+    margin-top: 2px;
+}
+
+footer {
+    background-color: grey;
+    line-height: 50px;
+}
+
+.footer-left-text {
+    margin-left: 10px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.footer-right-text {
+    margin-right: 10px;
+    vertical-align: middle;
+    float: right;
+}
