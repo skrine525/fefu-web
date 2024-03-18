@@ -99,8 +99,10 @@
 }
 
 .logo-container {
+    display: block;
     margin-top: 2px;
-    text-align: center;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .logo-block {
@@ -134,6 +136,7 @@
 .article-image-block {
     margin-left: 10px;
     display: inline-block;
+    vertical-align: middle;
     width: 30%;
 }
 
