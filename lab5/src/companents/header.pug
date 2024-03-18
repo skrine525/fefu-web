@@ -1,0 +1,16 @@
+-var top_image= 'http://ubuntuhost:9001/images/lab5/food1.jpg'
+-var bottom_images=["http://ubuntuhost:9001/images/lab5/food1.jpg","http://ubuntuhost:9001/images/lab5/food1.jpg"]
+.menu-container
+    .menu-title-container
+        h1 Claude Monet
+    .menu-button-container
+        a.menu-button-item-selected(href="index.html") Главная
+        a.menu-button-item(href="menu.html") Меню
+        a.menu-button-item(href="barinov.html") Шеф-повар
+.galary-container
+    .galary-top-container
+        img.galary-image(src= top_image)
+    .galary-bottom-container
+        each item in bottom_images
+            .galary-bottom-item
+                img.galary-image(src= item)
