@@ -1,0 +1,150 @@
+body {
+    /* margin: 0;
+    padding: 0; */
+    background-color: #f4f4f4;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.title {
+    font-size: 35px;
+    font-weight: bold;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.block {
+    box-sizing: border-box;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 5px auto;
+    padding: 10px 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.block h3 {
+    align-self: center;
+    margin: 0 0;
+    margin-bottom: 10px;
+}
+
+form {
+    align-self: center;
+    background-color: #fff;
+    width: 100%;
+}
+
+label {
+    color: #555;
+    display: block;
+    margin: 10px 0;
+    position: relative;
+    padding-left: 30px;
+}
+
+input[type="radio"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    margin: 0;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    margin: 0;
+}
+
+input[type="number"] {
+    margin: 3px 0;
+    border-radius: 5px;
+    border: 1px solid grey;
+    width: 80%;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #4b00b0;
+}
+
+button:active {
+    background-color: #37008b;
+}
+
+.trap-img {
+    width: calc(100% - 10px);
+    margin: 5px;
+}
+
+.inputs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.red-border {
+    border: 1px solid red !important;
+}

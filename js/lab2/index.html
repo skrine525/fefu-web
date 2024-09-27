@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+    <title>Трапеция - Калькулятор</title>
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="title">Трапеция - Калькулятор</div>
+        <div class="block">
+            <h3>Входные данные</h1>
+                <form id="inputs-mode">
+                    <label>
+                        <input type="radio" name="mode" value="1" checked>
+                        Основание, высота к основанию и прилежащие к основанию углы
+                    </label>
+                    <label>
+                        <input type="radio" name="mode" value="2">
+                        Четыре стороны
+                    </label>
+                    <button type="button" id="show-inputs">Показать</button>
+                </form>
+        </div>
+        <div class="block inputs-grid">
+            <form id="inputs">
+                <input name="a" type="number" placeholder="Основание a" id="input-a">
+                <input name="b" type="number" placeholder="Высота b" id="input-b">
+                <input name="alpha" type="number" placeholder="Угол α" id="input-alpha">
+                <input name="betta" type="number" placeholder="Угол β" id="input-betta">
+            </form>
+            <img src="img/trap1.png" class="trap-img" id="trap-img">
+            <form id="outputs">
+                <label>
+                    <input type="checkbox" name="output" value="s" id="output-s">
+                    Площадь
+                </label>
+                <label>
+                    <input type="checkbox" name="output" value="a" id="output-a">
+                    Угол между диагоналями
+                </label>
+                <label>
+                    <input type="checkbox" name="output" value="d" id="output-d">
+                    Диагонали
+                </label>
+                <label>
+                    <input type="checkbox" name="output" value="p" id="output-p">
+                    Периметр
+                </label>
+            </form>
+            <div class="controls">
+                <button id="calculate">Вычислить</button>
+                <button id="clear">Очистить</button>
+            </div>
+        </div>
+        <div class="block">
+            <h3>Выходные данные</h1>
+            <div id="output-content"></div>
+        </div>
+    </div>
+    <div id="error-modal" class="modal">
+        <div class="modal-content">
+            <span id="error-close" class="close-btn">&times;</span>
+            <p id="error-text"></p>
+        </div>
+    </div>
+</body>
+
+</html>
