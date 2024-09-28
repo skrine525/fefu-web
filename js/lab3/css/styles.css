@@ -1,0 +1,74 @@
+table{
+	border: 1px solid #eee;
+	table-layout: fixed;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+}
+
+table td{
+	padding: 5px 10px;
+	border: 1px solid #eee;
+	text-align: left;
+}
+
+table tbody tr:nth-child(odd){
+	background: #fff;
+}
+
+table tbody tr:nth-child(even){
+	background: #F7F7F7;
+}
+
+.control-container {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    padding: 10px 50px;
+    column-gap: 30px;
+}
+
+.control-name {
+    margin-top: 0;
+    text-align: center;
+}
+
+.control {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    width: 100%;
+    row-gap: 2px;
+    height: fit-content;
+    align-self: center;
+}
+
+.control-button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5px;
+    margin-top: 2px;
+}
+
+.control-label {
+    align-self: center;
+    height: 25px;
+}
+
+.from-to-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 25px;
+    column-gap: 5px;
+}
+
+input[type="button"] {
+    height: 25px;
+}

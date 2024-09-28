@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/data.js"></script>
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Меню</title>
+</head>
+
+<body>
+    <div class="control-container">
+        <h3 class="control-name">Фильтр</h3>
+        <h3 class="control-name">Сортировка</h3>
+        <div class="control">
+            <div class="control-label">Блюдо:</div>
+            <input type="text" id="filter-dish">
+            <div class="control-label">Калорийность:</div>
+            <div class="from-to-container">
+                <input type="number" placeholder="от" id="filter-cal-from">
+                <input type="number" placeholder="до" id="filter-cal-to">
+            </div>
+            <div class="control-label">Масса:</div>
+            <div class="from-to-container">
+                <input type="number" placeholder="от" id="filter-weight-from">
+                <input type="number" placeholder="до" id="filter-weight-to">
+            </div>
+            <div class="control-label">Цена:</div>
+            <div class="from-to-container">
+                <input type="number" placeholder="от" id="filter-price-from">
+                <input type="number" placeholder="до" id="filter-price-to">
+            </div>
+            <div class="control-label">Тип блюда:</div>
+            <select id="filter-type"></select>
+        </div>
+        <div class="control">
+            <div class="control-label">1-ый уровень:</div>
+            <div class="from-to-container">
+                <select id="sort-level1-field"></select>
+                <select id="sort-level1-order">
+                    <option value="asc">По возрастанию</option>
+                    <option value="desc">По убыванию</option>
+                </select>
+            </div>
+            <div class="control-label">2-ой уровень:</div>
+            <div class="from-to-container">
+                <select id="sort-level2-field"></select>
+                <select id="sort-level2-order">
+                    <option value="asc">По возрастанию</option>
+                    <option value="desc">По убыванию</option>
+                </select>
+            </div>
+            <div class="control-label">3-ий уровень:</div>
+            <div class="from-to-container">
+                <select id="sort-level3-field"></select>
+                <select id="sort-level3-order">
+                    <option value="asc">По возрастанию</option>
+                    <option value="desc">По убыванию</option>
+                </select>
+            </div>
+        </div>
+        <div class="control-button-container">
+            <input type="button" value="Применить" id="apply-filter">
+            <input type="button" value="Очистить" id="clear-filter">
+        </div>
+        <div class="control-button-container">
+            <input type="button" value="Применить" id="apply-sort">
+            <input type="button" value="Очистить" id="clear-sort">
+        </div>
+    </div>
+    <table>
+        <thead>
+          <tr>
+            <th>Блюдо</th>
+            <th>Калорийность (Ккал)</th>
+            <th>Масса (г)</th>
+            <th>Цена (руб.)</th>
+            <th>Тип блюда</th>
+          </tr>
+        </thead>
+        <tbody id="table-content"></tbody>
+    </table>
+</body>
+
+</html>
