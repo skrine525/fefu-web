@@ -1,0 +1,75 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.main-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.draw-container {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    width: fit-content;
+    height: fit-content;
+    justify-self: left;
+}
+
+.control-container {
+    box-sizing: border-box;
+    padding: 10px;
+    display: grid;
+    justify-self: right;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    width: fit-content;
+    height: fit-content;
+}
+
+label {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    justify-self: center;
+}
+
+input[type="number"] {
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    margin: 0;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #4b00b0;
+}
+
+button:active {
+    background-color: #37008b;
+}

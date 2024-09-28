@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Рисунок</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="control-container">
+            <div>Время анимации (мс):</div>
+            <input type="number" value="10000" id="duration">
+            <label>
+                <input type="checkbox" id="rotation">
+                Вращать?
+            </label>
+            <label>
+                <input type="checkbox" id="pulsation">
+                Пульсировать?
+            </label>
+            <button id="start">Запустить</button>
+            <button id="clear">Очистить</button>
+        </div>
+        <div class="draw-container">
+            <svg width="500" height="500"></svg>
+        </div>
+    </div>
+</body>
+
+</html>
