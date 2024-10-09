@@ -16,20 +16,19 @@
             <h3>Входные данные</h1>
                 <form id="inputs-mode">
                     <label>
-                        <input type="radio" name="mode" value="1" checked>
+                        <input type="radio" name="mode" value="1" id="mode-1" checked>
                         Основание, высота к основанию и прилежащие к основанию углы
                     </label>
                     <label>
-                        <input type="radio" name="mode" value="2">
+                        <input type="radio" name="mode" value="2" id="mode-2">
                         Четыре стороны
                     </label>
-                    <button type="button" id="show-inputs">Показать</button>
                 </form>
         </div>
         <div class="block inputs-grid">
-            <form id="inputs"></form>
+            <form id="inputs" class="form-inputs"></form>
             <img class="trap-img" id="trap-img">
-            <form id="outputs">
+            <form id="outputs" class="form-outputs">
                 <label>
                     <input type="checkbox" name="output" value="s" id="output-s">
                     Площадь
@@ -54,7 +53,7 @@
         </div>
         <div class="block">
             <h3>Выходные данные</h1>
-            <div id="output-content" class="output-content"></div>
+                <div id="output-content" class="output-content"></div>
         </div>
     </div>
     <div id="error-modal" class="modal">

@@ -1,5 +1,9 @@
 let currentMode = "1";
 
+function cot(x) {
+    return 1 / Math.tan(x);
+}
+
 function showError(text) {
     document.getElementById("error-modal").style.display = "flex";
     document.getElementById("error-text").innerText = text;
@@ -14,8 +18,68 @@ function validateInput(text) {
     return isNaN(value);
 }
 
-function cot(x) {
-    return 1 / Math.tan(x);
+function isTrapezoidMode1(a, h, alpha, betta) {
+    let alphaR = (alpha * Math.PI) / 180;
+    let bettaR = (betta * Math.PI) / 180;
+    let b = a - h * (cot(alphaR) + cot(bettaR));
+
+    let c = h / Math.sin(alphaR);
+    let d = h / Math.sin(bettaR);
+
+    console.log(a, b, c, d);
+
+    if (a <= 0 || b <= 0 || c <= 0 || d <= 0) {
+        return false;
+    }
+
+    if (a === b) {
+        return false;
+    }
+
+    if (Math.abs(a - b) >= (c + d) || Math.abs(a - b) <= Math.abs(c - d)) {
+        return false;
+    }
+
+    return true;
+}
+
+function isTrapezoidMode2(a, b, c, d) {
+    if (a <= 0 || b <= 0 || c <= 0 || d <= 0) {
+        return false;
+    }
+
+    if (a === b) {
+        return false;
+    }
+
+    if (Math.abs(a - b) >= (c + d) || Math.abs(a - b) <= Math.abs(c - d)) {
+        return false;
+    }
+
+    return true;
+}
+
+function validateInputByRegex(input) {
+    const regex = /^[0-9]*[.,]?[0-9]*$/;
+
+    if (!regex.test(input.value)) {
+        input.value = input.value.replace(/[^0-9.,]/g, '');
+    }
+}
+
+function validateInputByRegex2(input) {
+    const regex = /^[0-9]*[.,]?[0-9]*$/;
+
+    if (!regex.test(input.value)) {
+        input.value = input.value.replace(/[^0-9.,]/g, '');
+    }
+
+    const number = parseFloat(input.value.replace(',', '.'));
+    if (number > 180) {
+        input.value = '180';
+    } else if (number < 0) {
+        input.value = '0';
+    }
 }
 
 function getSquareByMode1(a, h, alpha, betta) {
@@ -30,7 +94,7 @@ function getSquareByMode1(a, h, alpha, betta) {
 
 function getSquareByMode2(a, b, c, d) {
     let p = (a + b + c + d) / 2;
-    let s = (a + b) / Math.abs(a -  b) * Math.sqrt((p - a) * (p - b) * (p - a - c) * (p - a - d));
+    let s = (a + b) / Math.abs(a - b) * Math.sqrt((p - a) * (p - b) * (p - a - c) * (p - a - d));
 
     return s;
 }
@@ -135,9 +199,13 @@ function clear() {
 
 function showMode1() {
     html = `
+    <div>Основание a:</div>
     <input name="a" type="number" placeholder="Основание a" id="input-a">
+    <div>Высота b:</div>
     <input name="b" type="number" placeholder="Высота b" id="input-b">
+    <div>Угол α:</div>
     <input name="alpha" type="number" placeholder="Угол α" id="input-alpha">
+    <div>Угол β:</div>
     <input name="betta" type="number" placeholder="Угол β" id="input-betta">`;
     document.getElementById("inputs").innerHTML = html;
     document.getElementById("trap-img").src = "img/trap1.png";
@@ -150,25 +218,33 @@ function showMode1() {
     inputA.addEventListener("click", () => {
         inputA.classList.remove("red-border");
     });
+    inputA.addEventListener("input", validateInputByRegex.bind(null, inputA))
 
     inputB.addEventListener("click", () => {
         inputB.classList.remove("red-border");
     });
+    inputB.addEventListener("input", validateInputByRegex.bind(null, inputB))
 
     inputAlpha.addEventListener("click", () => {
         inputAlpha.classList.remove("red-border");
     });
+    inputAlpha.addEventListener("input", validateInputByRegex2.bind(null, inputAlpha))
 
     inputBetta.addEventListener("click", () => {
         inputBetta.classList.remove("red-border");
     });
+    inputBetta.addEventListener("input", validateInputByRegex2.bind(null, inputBetta))
 }
 
 function showMode2() {
     html = `
+    <div>Сторона a:</div>
     <input name="a" type="number" placeholder="Сторона a" id="input-a">
+    <div>Сторона b:</div>
     <input name="b" type="number" placeholder="Сторона b" id="input-b">
+    <div>Сторона c:</div>
     <input name="c" type="number" placeholder="Сторона c" id="input-c">
+    <div>Сторона d:</div>
     <input name="d" type="number" placeholder="Сторона d" id="input-d">`;
     document.getElementById("inputs").innerHTML = html;
     document.getElementById("trap-img").src = "img/trap2.png";
@@ -181,23 +257,27 @@ function showMode2() {
     inputA.addEventListener("click", () => {
         inputA.classList.remove("red-border");
     });
+    inputA.addEventListener("input", validateInputByRegex.bind(null, inputA))
 
     inputB.addEventListener("click", () => {
         inputB.classList.remove("red-border");
     });
+    inputB.addEventListener("input", validateInputByRegex.bind(null, inputB))
 
     inputC.addEventListener("click", () => {
         inputC.classList.remove("red-border");
     });
+    inputC.addEventListener("input", validateInputByRegex.bind(null, inputC))
 
     inputD.addEventListener("click", () => {
         inputD.classList.remove("red-border");
     });
+    inputD.addEventListener("input", validateInputByRegex.bind(null, inputD))
 }
 
-function showInputs() {
+function showInputs(mode) {
     clear();
-    currentMode = document.getElementById("inputs-mode").elements["mode"].value;
+    currentMode = mode;
 
     if (currentMode == "1") {
         showMode1();
@@ -278,6 +358,11 @@ function calculate() {
         bValue = parseFloat(bValue);
         alphaValue = parseFloat(alphaValue);
         bettaValue = parseFloat(bettaValue);
+
+        if(!isTrapezoidMode1(aValue, bValue, alphaValue, bettaValue)) {
+            showError("Трапеция не существует")
+            return;
+        }
 
         let hasInput = false;
         document.getElementById("output-content").innerHTML = "";
@@ -371,6 +456,11 @@ function calculate() {
         cValue = parseFloat(cValue);
         dValue = parseFloat(dValue);
 
+        if(!isTrapezoidMode2(aValue, bValue, cValue, dValue)) {
+            showError("Трапеция не существует")
+            return;
+        }
+
         let hasInput = false;
         document.getElementById("output-content").innerHTML = "";
 
@@ -408,7 +498,8 @@ function calculate() {
     }
 }
 
-document.getElementById("show-inputs").addEventListener("click", showInputs);
+document.getElementById("mode-1").addEventListener("click", showInputs.bind(null, 1));
+document.getElementById("mode-2").addEventListener("click", showInputs.bind(null, 2));
 document.getElementById("calculate").addEventListener("click", calculate);
 document.getElementById("clear").addEventListener("click", clear);
 document.getElementById("error-close").addEventListener("click", hideError);

@@ -40,7 +40,16 @@ body {
     margin-bottom: 10px;
 }
 
-form {
+.form-inputs {
+    align-self: center;
+    background-color: #fff;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.form-outputs {
     align-self: center;
     background-color: #fff;
     width: 100%;
