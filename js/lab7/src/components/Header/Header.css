@@ -1,0 +1,12 @@
+header {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+header img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}

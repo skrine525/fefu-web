@@ -1,0 +1,99 @@
+.credit-calculator {
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    width: 800px;
+}
+
+.credit-calculator h2 {
+    color: #000000;
+}
+
+.credit-calculator form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.credit-calculator label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.credit-calculator input[type="text"],
+.credit-calculator input[type="number"],
+.credit-calculator input[type="range"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 24px);
+    font-size: 1em;
+}
+
+.credit-calculator input[type="text"].static {
+    background-color: #f0f0f0;
+    border: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+.credit-calculator input[type="submit"] {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.credit-calculator input[type="submit"]:hover {
+    background-color: #333333;
+}
+
+.slider {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.slider-value {
+    font-size: 1.2em;
+    color: #000000;
+    margin-left: 10px;
+}
+
+.loan-summary {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.loan-summary h3 {
+    font-size: 1.5em;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.loan-summary p {
+    font-size: 1.2em;
+    color: #333333;
+    margin: 10px 0;
+}
+
+.loan-summary span {
+    font-weight: bold;
+    color: #000000;
+}
